@@ -4,7 +4,7 @@ email:       dungnv2410@gmail.com
 author:      Nguyen Van Dung
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
-url:         "http://doanguyen.com"
+url:         "http://doanguyen.github.io"
 
 # Google analytics
 google_analytics:
