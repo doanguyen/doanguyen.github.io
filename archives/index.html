@@ -1,7 +1,31 @@
 ---
-layout: default
+layout: index
 ---
 
+<div class="home">
+    {% for post in paginator.posts %}
+	<li>
+		<article>
+		<a href="{{ post.url | prepend: site.baseurl }}">
+		{{post.title}}
+		<span class="entry-date">
+			<time datetime="2014-06-19T00:00:00+00:00">June 19, 2014</time>
+		</span>
+		<span class="excerpt">
+		  {% if post.summary %}
+            {{ post.summary }}
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %}
+		</span>
+		</a>
+		</article>
+	</li>
+    {% endfor %}
+	{% include pagination.html %}
+  </div>
+  
+<!--
 <div class="home">
 
   <div class="posts">
@@ -22,3 +46,6 @@ layout: default
 
   {% include pagination.html %}
 </div>
+
+
+-->
