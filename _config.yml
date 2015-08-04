@@ -1,8 +1,8 @@
 # Site settings
-title:       doanguyen
+title:       Nguyen Van Dung
 email:       dungnv2410@gmail.com
 author:      Nguyen Van Dung
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Doanguyen homepage."
 baseurl:     ""
 url:         "http://doanguyen.github.io"
 
@@ -10,14 +10,14 @@ url:         "http://doanguyen.github.io"
 google_analytics:
 
 # Optional features
-animated:           true
+animated:           false
 show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
-disqus_shortname:
+disqus_shortname: doanguyen
 
 # Social icons
 github_username:
@@ -32,10 +32,10 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 share_text: 'Share this post!'
 # Change to 'true' to enable individual icons
-share_facebook: false
+share_facebook: true
 share_twitter: false
 share_googleplus: false
 share_linkedin: false

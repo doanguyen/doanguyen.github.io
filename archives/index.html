@@ -1,16 +1,18 @@
 ---
-layout: index
+layout: default
 ---
 
 <div class="home">
+<h1>Blogs</h1>
+<p>Since Jan 2015, after almost 2 years survived in Seoul, my life is changed. I want to do blogging. I want to write not only important things but also a lot of trivial things.</p>
     {% for post in paginator.posts %}
 	<li>
 		<article>
 		<a href="{{ post.url | prepend: site.baseurl }}">
 		{{post.title}}
 		<span class="entry-date">
-			<time datetime="2014-06-19T00:00:00+00:00">June 19, 2014</time>
-		</span>
+			<time datetime="{{post.date | date: '%B %d, %Y' }}">{{post.date| date: '%B %d, %Y' }}</time>
+		</span></a>
 		<span class="excerpt">
 		  {% if post.summary %}
             {{ post.summary }}
@@ -18,7 +20,7 @@ layout: index
             {{ post.excerpt }}
           {% endif %}
 		</span>
-		</a>
+		
 		</article>
 	</li>
     {% endfor %}
