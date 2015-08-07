@@ -4,7 +4,7 @@ email:       dungnv2410@gmail.com
 author:      Nguyen Van Dung
 description: "doa nguyen homepage"
 baseurl:     ""
-url:         "http://doanguyen.github.io"
+url:         "http://doanguyen.com"
 
 # Google analytics
 google_analytics:	UA-37376311-2
