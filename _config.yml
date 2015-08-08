@@ -50,7 +50,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     15
+paginate:     20
 paginate_path:	archives/page-:num
 sass:
   compressed: true
