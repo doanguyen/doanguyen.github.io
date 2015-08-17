@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      The ten most common mistakes in writting paper
+title:      The ten most common mistakes in writing paper
 date:       2015-05-08 10:31:19
 summary:    Common mistake in writing paper.
-permalink:	the-ten-most-common-mistakes-in-writting-paper
+permalink:	the-ten-most-common-mistakes-in-writing-paper
 ---
 
 1. Failure to follow instructions.
