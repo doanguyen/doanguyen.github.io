@@ -12,4 +12,4 @@ It was firstly amazed when gobox.vn is launched, beautifully deisgn with such a 
 
 Thanks for being a part of #Gobox.vn
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Tijuwy9fSF8" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tijuwy9fSF8" frameborder="0" allowfullscreen></iframe>
