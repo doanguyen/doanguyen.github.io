@@ -1,0 +1,48 @@
+---
+layout:     post
+title:      Angular 2 và React - Trận chiến cam go
+date:       2016-05-06 08:46
+summary:    Angular 2 và React - Trận chiến cam go
+permalink:	angular-2-va-react-tran-chien-cam-go
+---
+
+[Angular 2 gần đây đã ra bản Beta](https://angular.io/) và dường như sẽ là một trong những nền tảng nổi bật của năm 2016. Hãy cùng điểm xem những điểm mạnh và yếu khi so sánh giữa Angular 2 và đứa con cưng năm 2015 của Facebook: [React](https://facebook.github.io/react/).
+
+**Lưu ý**: Dưới đây mình tổng hợp 1 số thông tin từ những blogger có tiếng và có kinh nghiệm trong lập trình web, các bạn có thể xem thêm ở phần tài liệu tham khảo để biết thêm chi tiết.
+
+![Cuộc chiến cam go giữa Angular 2 và React](http://i.imgur.com/Gy2TifR.jpg)
+
+## So sánh giữa táo và lê
+Đúng vậy, Angular là nền tảng (Framework), React là thư viện (Library), do đó một số bạn nói so sánh Angular và React là phi logic, *không hẳn là vậy*
+
+>Để dễ mường tượng, việc chọn lựa giữa Angular và React giống như bạn chọn để mua một chiếc máy tính đã lắp sẵn và mua linh kiện cấu thành nên nó.
+
+Mục đích của bài viết này để cho bạn thấy giá trị của 2 cách tiếp cận. Mình sẽ so sánh cú pháp, mô hình của React với Angular. Đúng vậy, nó giống như bạn so sánh giữa việc đi mua một case máy tính và việc mua từng linh kiện lắp ráp thành một chiếc máy tính hoàn chỉnh. Điều đó đáng để suy ngẫm!
+
+## Điểm mạnh của Angular 2
+Hãy bắt đầu bằng việc phân tích điểm mạnh của Angular 2 so với React
+
+### _Bớt công chọn lựa phức tạp_
+Từ khi Angular là một framework, nó cung cấp trực tiếp cho người dùng rất nhiều tiện ích. Với React, bạn cần phải gọi một số thư viện để thực hiện một công việc thực thụ. Có thể bạn sẽ đúng khi chọn lựa một số thư viện cho những công việc như: routing, enforcing unidirectional flows, web API calls, testing, dependency management và nhiều công việc khác nữa. Với mỗi công việc đó lại là một cơ số lựa chọn, quyết định mà bạn đưa ra sẽ không dễ dàng. 
+
+Angular hỗ trợ bạn rất nhiều trong công tác lựa chọn đó, điều đó giúp bạn nhanh chóng hơn để bắt đầu vào công việc thiết kế và bỏ qua việc mệt mỏi khi phải lựa chọn. 
+
+Angular team sử dụng TypeScript, đó cũng là lợi thế tiếp theo ...
+
+### _TypeScript = Cấu trúc rõ ràng_
+Tuy rằng TypeScript không phải tuyệt vời trên mọi khía cạnh, tuy nhiên Angular 2 sử dụng concept của TypeScript để tạo ra thế mạnh khi sử dụng JavaScript. Trong khi đó React phải đối mặt với sự phức tạp, không đồng nhất do đó gây khó khăn cho những người mới bắt đầu.
+
+### _Đơn giản hóa, không rối rắm_
+2015 là năm mà Javascript có sự bùng nổ mạnh mẽ, tuy vậy sự phân mảnh, rối rắm càng lớn theo. Mặc dù React được cho là sẽ tới [phiên bản ổn định](https://facebook.github.io/react/blog/) tuy nhiên hệ sinh thái bao quanh React lại đi theo nhiều hướng khác nhau. Do đó, những gì bạn viết cho React hôm nay có thể sẽ trở nên cũ kỹ hoặc sẽ phải thay đổi lớn nếu bạn sử dụng những thư viện của React bây giờ. 
+
+Ngược lại, Angular 2 được cẩn thận nghiên cứu và đi tới 1 nền tảng toàn diện. Có thể hiểu rằng bạn không phải lo lắng về sự phân mảnh của Angular sau khi bản Angular 2 được chính thức công bố. 
+
+### _Công cụ hỗ trợ phong phú_
+React JSX là một trong những công nghệ hiện đại mà Facebook hỗ trợ cho React, tuy nhiên, bạn cần tìm chọn IDE để hỗ trợ cho cú pháp của JSX. Angular 2 sử dụng template gồm ký tự và HTML files do đó bạn dễ dàng tìm các công cụ để chỉnh sửa, phát triển.
+
+### _Thành tố web thân thiện_
+Thiết kế Angular 2 gồm các thành phần chuẩn của công nghệ Web. Nói ngắn gọn, các components bạn viết cho Angular 2 có thể dễ dàng chuyển đổi sang vanila JS hay web components hơn là khi bạn sử dụng React.
+
+##Điểm mạnh của React
+Cùng mình điểm lại những điểm khiến React vượt lên.
+### JSX

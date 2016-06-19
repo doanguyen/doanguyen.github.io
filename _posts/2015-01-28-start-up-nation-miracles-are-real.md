@@ -6,7 +6,7 @@ summary:    The book simply write about a country with a population of 7.1 milli
 permalink:	start-up-nation-miracles-are-real 
 ---
 
-In the last of Sep. 2014, i spent some time to read the book "start-up nation" of Dan Senor and Saul Singe.
+In the last of Sep. 2014, I read the book "start-up nation" of Dan Senor and Saul Singe.
 
 ![Start-up Nation](http://image.slidesharecdn.com/start-upnationbandich-130829025602-phpapp02/95/start-up-nation-quc-gia-khi-nghip-1-638.jpg?cb=1377763115)
 
