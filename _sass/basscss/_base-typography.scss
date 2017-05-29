@@ -62,7 +62,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  font-size: $h3;
+  font-size: $h4;
   font-style: italic;
 }
 
@@ -73,6 +73,7 @@ h1,
 
 h2,
 .h2 {
+  color: $blue;
   font-size: $h2;
 }
 
