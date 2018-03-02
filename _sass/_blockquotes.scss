@@ -5,20 +5,20 @@ blockquote{
   padding: 15px 20px 15px 45px;
   margin: 0 0 20px;
   position: relative;
-  
+
   /*Font*/
   // font-family: Georgia, serif;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: 'Delius', cursive;
   font-size: 20px;
   // font-weight: 400 !default;
   line-height: 1.2;
   color: #666;
   text-align: justify;
-  
+
   /*Borders - (Optional)*/
   border-left: 15px solid #c76c0c;
   border-right: 2px solid #c76c0c;
-  
+
   /*Box Shadow - (Optional)*/
   -moz-box-shadow: 2px 2px 15px #ccc;
   -webkit-box-shadow: 2px 2px 15px #ccc;
@@ -27,13 +27,13 @@ blockquote{
 
 blockquote::before{
   content: "\201C"; /*Unicode for Left Double Quote*/
-  
+
   /*Font*/
   font-family: Georgia, serif;
   font-size: 60px;
   font-weight: bold;
   color: #999;
-  
+
   /*Positioning*/
   position: absolute;
   left: 10px;
