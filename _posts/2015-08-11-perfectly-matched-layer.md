@@ -4,6 +4,7 @@ title:      Perfectly-matched layer
 date:       2015-08-11 3:53:19
 summary:    Perfectly-matched layer
 permalink:	perfectly-matched-layer
+tags: index
 ---
 
 The ideal for an artificial absorbing layer regardless of frequency and/or incident angle, is introduced mathematically by Berenger in 1994 called perfectly matched layer (PML). The key ideal of a PML is a medium that do not reflect at the interface and then strongly absorb from the interior region. Later, another formulation of PML has been introduced and become more popular due to its simplicity and efficiently, called uniaxial PML or UPML. An UPML is a PML layer with an artificial anisotropic absorbing material. Taking advantage of UPML, we can computationally introduce an angle-independent absorber material. 

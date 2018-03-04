@@ -4,6 +4,7 @@ title:      Sublime Text, a better lightweight text editor
 date:       2015-01-16
 summary:    Best editor ever.
 permalink:	sublime-text-a-better-lightweight-text-editor
+tags: index
 ---
 
 Heretofore I used to use notepad++ (N++) like an editor. It's  really nice with stable, lightweight and powerful. With bunch of plugins, including FTP, Json viewer, Hex editor,... along with perfect syntax highlight and code folding for over 50 programming, scripting, and markup languages, I was a faithful of N++ before I came into Sublime Text.

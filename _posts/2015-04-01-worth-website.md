@@ -4,6 +4,7 @@ title:      Worth website
 date:       2015-04-01 08:46
 summary:    There are many website to learn.
 permalink:	worth-website
+tags: index
 ---
 
 There are many website, reading all of them are impossible, here are some worthy website  that i should learn:

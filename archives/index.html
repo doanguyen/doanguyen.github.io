@@ -3,51 +3,54 @@ layout: default
 ---
 
 <div class="home">
-<h1>Blogs</h1>
-<p>Since Jan 2015, after almost 2 years survived in Seoul, my life is changed. I want to do blogging. I want to write not only important things but also a lot of trivial things.</p>
-    {% for post in paginator.posts %}
+  <h1>Blogs</h1>
+  <p>Since Jan 2015, after almost 2 years survived in Seoul, my life is changed. I want to do blogging. I want to write not only important things but also a lot of trivial things.</p>
+  {% for post in paginator.posts %}
+  {% if post.tags and post.tags contains "index" %}
 	<li>
 		<article>
-		<a href="{{ post.url | prepend: site.baseurl }}">
-		{{post.title}}
-		<span class="entry-date">
-			<time datetime="{{post.date | date: '%B %d, %Y' }}">{{post.date| date: '%B %d, %Y' }}</time>
-		</span></a>
-		<span class="excerpt">
-		  {% if post.summary %}
-            {{ post.summary }}
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{post.title}}
+        <span class="entry-date">
+          <time datetime="{{post.date | date: '%B %d, %Y' }}">{{post.date| date: '%B %d, %Y' }}</time>
+        </span></a>
+        <span class="excerpt">
+          {% if post.summary %}
+          {{ post.summary }}
           {% else %}
-            {{ post.excerpt }}
+          {{ post.excerpt }}
           {% endif %}
-		</span>
-		
-		</article>
-	</li>
+        </span>
+        
+      </article>
+    </li>
+    {% endif %}
     {% endfor %}
-	{% include pagination.html %}
+    {% include pagination.html %}
   </div>
   
-<!--
-<div class="home">
-
-  <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post py3">
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
-        <p class="post-summary">
-          {% if post.summary %}
+  <!--
+    <div class="home">
+      
+      <div class="posts">
+        {% for post in paginator.posts %}
+        <div class="post py3">
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <p class="post-summary">
+            {% if post.summary %}
             {{ post.summary }}
-          {% else %}
+            {% else %}
             {{ post.excerpt }}
-          {% endif %}
-        </p>
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-
-  {% include pagination.html %}
-</div>
-
-
--->
+      
+      {% include pagination.html %}
+    </div>
+    
+    
+  -->
+  

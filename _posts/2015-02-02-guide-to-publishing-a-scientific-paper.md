@@ -4,6 +4,7 @@ title:      Guide to Publishing a Scientific Paper
 date:       2015-02-02 08:46
 summary:    Every scientist who is preparing to write a paper should read this book before embarking on the preparation of a manuscript.
 permalink:	guide-to-publishing-a-scientific-paper
+tags: index
 ---
 
 Every scientist who is preparing to write a paper should read this book before embarking on the preparation of a manuscript.  This useful book also includes samples of letters to the Editor and responses to the Editor's comments and referees' criticism.

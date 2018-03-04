@@ -4,6 +4,7 @@ title:      Những giọng Anh ngữ hay nhất
 date:       2015-05-12 10:34:19
 summary:    Best English accent.
 permalink:	nhung-giong-anh-ngu-hay-nhat
+tags: index
 ---
 
 Mỗi người có một giọng nói, bao gồm chất giọng và giọng điệu. Điều đó làm nên sự riêng biệt của mỗi người. Dưới đây là 4 giọng nói Anh ngữ mà mình bồ kết nhất:

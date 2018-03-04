@@ -4,6 +4,7 @@ title:      Vector plots with Matplotlib
 date:       2015-05-09 10:34:10
 summary:    Vector plots can also be made in Matplotlib.
 permalink:	vector-plots-with-matplotlib
+tags: index
 ---
 
 Vector plots can also be made in Matplotlib. Here is a script producing a vector plot and a key showing the scale of the vectors:

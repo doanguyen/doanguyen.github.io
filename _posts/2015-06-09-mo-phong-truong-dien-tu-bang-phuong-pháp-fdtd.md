@@ -4,6 +4,7 @@ title:      Mô phỏng trường điện từ bằng phương pháp FDTD
 date:       2015-06-09 10:31:19
 summary:    mô phỏng trường điện từ bằng phương pháp FDTD
 permalink:	mo-phong-truong-dien-tu-bang-phuong-phap-fdtd
+tags: index
 ---
 
 _Tổng quan: Bài viết này được dịch, tham khảo, và bổ sung từ các nguồn khác nhau được trích trong phần Tài liệu tham khảo. Những vấn đề được nêu ra gồm có: mô phỏng trường điện từ bằng phương pháp FDTD, cách cài đặt, sử dụng, gỡ rối, khi sử dụng MEEP (mã nguồn mở dùng để thực hiện mô phỏng) và cuối cùng là một số ví dụ nổi bật khi so sánh kết quả giữa MEEP với các chương trình mô phỏng thương mại (CST, COMSOL, HFSS,...)_

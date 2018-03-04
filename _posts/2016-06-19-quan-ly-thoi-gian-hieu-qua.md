@@ -4,6 +4,7 @@ title:      Quản lý thời gian hiệu quả
 date:       2016-06-19 08:46
 summary:    Quản lý thời gian hiệu quả
 permalink:	quan-ly-thoi-gian-hieu-qua
+tags: index
 ---
 
 ## Tại sao cần có kỹ năng quản lý thời gian?

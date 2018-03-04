@@ -4,6 +4,7 @@ title:      Vnexpress like booster
 date:       2015-08-11 3:53:19
 summary:    Tự động like comment trên vnexpress.net
 permalink:	vnexpress-like-booster
+tags: index
 ---
 Using this minor python script to automatically like a comment in vnexpress.net.
 

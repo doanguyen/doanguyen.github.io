@@ -4,6 +4,7 @@ title:      How To Focus Your Mind Instantly
 date:       2015-04-01 08:46
 summary:    When you try to do everything, you do nothing..
 permalink:	how-to-focus-your-mind-instantly
+tags: index
 ---
 
 > When you try to do everything, you do nothing.

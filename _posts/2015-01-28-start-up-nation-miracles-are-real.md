@@ -4,6 +4,7 @@ title:      Start-up nation - miracles are real
 date:       2015-01-28 15:31:19
 summary:    The book simply write about a country with a population of 7.1 million...
 permalink:	start-up-nation-miracles-are-real 
+tags: index
 ---
 
 In the last of Sep. 2014, I read the book "start-up nation" of Dan Senor and Saul Singe.

@@ -4,6 +4,7 @@ title:      My first business project
 date:       2015-12-01 08:46
 summary:    My first business project comes success.
 permalink:	my-first-business-project-gobox-vn
+tags: index
 ---
 
 It was firstly amazed when gobox.vn is launched, beautifully deisgn with such a good performance, really fast. It took me and my partner more than 2 weeks to build the beta version. 

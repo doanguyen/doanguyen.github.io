@@ -4,6 +4,7 @@ title:      Some idioms related to Science
 date:       2015-03-09 08:46
 summary:    Science idioms.
 permalink:	some-idioms-related-to-science
+tags: index
 ---
 
 ####All-singing, all-dancing####

@@ -4,6 +4,7 @@ title:      Tự động lấy link download trên trang chiasenhac.com
 date:       2015-06-01 10:31:19
 summary:    Bài viết sau chia sẻ cách thức lấy đường dẫn từ playlist tự động bằng python.
 permalink:	tu-dong-lay-link-download-tren-trang-chiasenhac-com
+tags: index
 ---
 
 Chiasenhac.com là trang web chia sẻ nhạc chất lượng cao miễn phí, bao gồm cả định dạng flac, mp3. Bài viết sau chia sẻ cách thức lấy đường dẫn từ playlist tự động bằng python.

@@ -4,6 +4,7 @@ title:      Sketchup 2015 + Vray Plugin for Windows 64bit
 date:       2015-04-01 08:46
 summary:    Using Sketchup 2015 and Vray to render, we can create gorgeous figures, not only in scientific but also in 3d graphical.
 permalink:	sketchup-2015-vray-plugin-for-windows-64bit
+tags: index
 ---
 
 Using Sketchup 2015 and Vray to render, we can create gorgeous figures, not only in scientific but also in 3d graphical.

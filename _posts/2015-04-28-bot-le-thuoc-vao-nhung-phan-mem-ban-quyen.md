@@ -4,6 +4,7 @@ title:      Bớt lệ thuộc vào những phần mềm bản quyền
 date:       2015-04-28 15:31:19
 summary:    Công cụ thay thế việc sử dụng những phần mềm thương mại, không rõ nguồn gốc.
 permalink:	bot-le-thuoc-vao-nhung-phan-mem-ban-quyen
+tags: index
 ---
 
 Sau đây là một số phần mềm, công cụ thay thế cho công việc khoa học. Thay vì việc sử dụng những phần mềm thương mại, không rõ nguồn gốc, có thể tồn tại mã độc thì một số phần mềm, công cụ, mã nguồn tương ứng có thể làm tốt nhiệm vụ trên:
