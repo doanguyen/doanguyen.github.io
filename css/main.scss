@@ -26,3 +26,23 @@
 @import 'gists';
 @import 'measure';
 @import 'pagination';
+
+h2 {
+    margin-top: 2em;
+    font-weight: normal;
+    text-align: center;
+}
+h2:after {
+    border-bottom: 1px solid #0076df;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+code {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    font-family: "Source Code Pro", Consolas, monospace;
+}
