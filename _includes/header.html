@@ -1,4 +1,4 @@
-<header class="site-header px2 px-responsive">
+<!-- <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
       <a href="/" class="site-title">Home</a>
@@ -11,4 +11,8 @@
       {% endif %}
     </div>
   </div>
-</header>
+</header> -->
+
+{% if page.image %}
+<img src="{{page.image}}">
+{% endif %}
