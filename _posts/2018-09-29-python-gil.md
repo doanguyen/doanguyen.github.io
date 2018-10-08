@@ -45,5 +45,11 @@ Có thể nói việc GIL là thiết yếu trong Python (hay cả Ruby) xuất 
 
 Ngoài cách sử dụng GIL, các lập trình viên còn có thể tạo ra 1 layer trong quá trình compiler - JIT (Just in time compiler) để giải quyết vấn đề trên. Jpython, IronPython là 2 ví dụ điển hình của interpreter Python mà không sử dụng GIL. Tuy nhiên nhược điểm của JIT là thời gian khởi động lại cực chậm nên không được nhiều lập trình viên Python  sử dụng.
 
-## Python thực hiện GIL như thế nào?
+Tụm chung lại:
+
+* Jython và IronPython không tồn tại GIL và hoàn toàn có thể khai thác được các ưu thế của multiprocessor.
+* PyPy có tồn tại GIL, và cộng đồng Pypy đang cố gắng loại bỏ GIL bằng cách thực hiện [Software Transactional Memory](http://doc.pypy.org/en/latest/stm.html#id14)
+* Cython cũng tồn tại GIL, tuy nhiên lập trình viên có thể tạm thời tắt bằng `with` statement.
+
+## Tại sao Python chọn GIL làm giải pháp?
 
