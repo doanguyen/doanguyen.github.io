@@ -43,7 +43,7 @@ Quay lại với GIL:
 
 Có thể nói việc GIL là thiết yếu trong Python (hay cả Ruby) xuất phát từ việc sử dụng reference counting.  Tại sao vậy? Thử tưởng tượng trong trường hợp 2 Thread cùng tham chiếu tới 1 *variable counting* và cùng tăng hoặc giảm đồng thời giá trị đó, nếu may mắn thì chúng ta sẽ xuất hiện memory leak, tồi tệ hơn khi 1 Thread đã xóa biến `a` khỏi bộ nhớ nhưng vẫn còn 1 Thread khác vẫn sử dụng biến `a`, điều đó sẽ dẫn tới chương trình crash mà lúc đó sẽ rất khó để tìm ra lỗi. Do đó để giải quyết vấn đề trên, 1 Global Lock được tạo ra cho tất cả các Thread.
 
-Ngoài cách sử dụng GIL, các lập trình viên còn có thể tạo ra 1 layer trong quá trình compiler - JIT (Just in time compiler) để giải quyết vấn đề trên. Jpython, IronPython là 2 ví dụ điển hình của interpreter Python mà không sử dụng GIL. Tuy nhiên nhược điểm của JIT là thời gian khởi động lại cực chậm nên không được nhiều lập trình viên Python  sử dụng.
+Ngoài cách sử dụng GIL, các lập trình viên còn có thể tạo ra 1 layer trong quá trình compiler - JIT (Just in time compiler) để giải quyết vấn đề trên. Jpython, IronPython là 2 ví dụ điển hình của interpreter Python mà không sử dụng GIL. Tuy nhiên nhược điểm của JIT là thời gian khởi động lại siêu chậm nên không được nhiều lập trình viên Python  sử dụng.
 
 Tụm chung lại:
 
@@ -52,4 +52,32 @@ Tụm chung lại:
 * Cython cũng tồn tại GIL, tuy nhiên lập trình viên có thể tạm thời tắt bằng `with` statement.
 
 ## Tại sao Python chọn GIL làm giải pháp?
+
+Vậy tại sao Guido lại chọn GIL từ những ngày đầu viết CPython? Liệu đó có phải là lựa chọn tồi ngay từ khi Python được hình thành?
+
+Chớ trêu thay, việc chọn GIL có lẽ lại là một trong những quyết định khiến Python trở nên phổ biến như hiện nay. Những ngày đầu Python hình thành, khái niệm về Thread/Multithread trong các hệ điều hành còn chưa được phổ biến [need source?], và Python được thiết kế với mục đích dễ đọc, dễ viết cho người mới làm quen nên tốc độ xử lý không phải là ưu tiên hàng đầu. Và khi Python càng được mở rộng, vô số những thư viện khác nhau được hình thành tư rất nhiều nguồn lập trình viên, vì thế thread-safe memory là điều kiện tiên quyết để có cộng đồng lập trình viên lành mạnh, cho ra những phần mềm an toàn và hạn chế tối thiểu lỗi trong quá trình thực thi. Và cũng từ GIL, tốc độ thực thi của phần mềm single-threaded được tăng cường tốc độ đáng kể, những thư viện C với non thread-safe có thể dễ dàng `port` qua thư viện Python sử dụng Python extension, điều đó càng làm cho cộng đồng Python trở nên phát triển như hiện nay. Do đó, có thể nói rằng GIL là giải pháp an toàn để giải quyết các vấn đề phức tạp mà cộng đồng lập trình viên Python gặp phải hàng ngày.
+
+Điều đó đi cùng với 1 hạn chế: lập trình multithread sẽ ít nhận được lợi ích từ CPython!
+
+## Liệu có thể lập trình Multithread trên Python hay không?
+
+Hoàn toàn có thể, thậm chí Python còn có 1 thư viện chuẩn dành cho multithreading. Hãy xem ví dụ sau đây:
+
+```python
+# single_threaded.py
+import time
+from threading import Thread
+
+COUNT = 50000000
+
+def countdown(n):
+    while n>0:
+        n -= 1
+
+start = time.time()
+countdown(COUNT)
+end = time.time()
+
+print('Time taken in seconds -', end - start)
+```
 
