@@ -19,7 +19,7 @@ You don’t need pen and paper. You don’t need anything except to keep three s
 
 So, how do you focus your mind instantly? It’s simple – choose, clarify, and commit!
 
-###1. Choose ONE Objective###
+1. Choose ONE Objective
 
 Don’t say: “I’m going to focus.”
 Do ask: “I’m going to focus on what single thing?”
@@ -29,7 +29,7 @@ Take the pressure off yourself for choosing the very best task (perfectionism). 
 
 And choosing one single objective is the non-optional, required, ironclad, sealed, official, FDA-approved, permanent, necessary first step for getting focused in the moment. Don’t try any other way!
 
-###2. Clarify Your First Tiny Step###
+2. Clarify Your First Tiny Step
 
 I like to treat myself as if I’m a little child. If I decide to write an article, I’ll say to myself in a baby voice, “can you write five words? Why don’t you do that right now and I’ll give you an animal cracker? Very good!” It’s so degrading, but I won’t turn myself in for mental illness or get too upset, because it works too darn well. It must be the animal crackers…or perhaps it’s the small steps.
 
@@ -57,7 +57,7 @@ This list is obvious, and more effective than the one-step “go to the gym.” 
 
 Don’t make it easy to opt out of important tasks. Be specific about your first tiny steps (and make them so tiny that you can’t say no).
 
-###3. Commit To Refocusing###
+3. Commit To Refocusing
 
 You will lose focus. Count on it and prepare for it. I once heard that the average person loses focus every 10 seconds, and I believe it. They say that great writing is rewriting. In the same way, great focusing is refocusing. 
 

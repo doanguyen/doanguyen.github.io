@@ -4,8 +4,12 @@ title:      Sublime Text - The text editor you'll fall in love with
 date:       2015-03-22 06:42
 summary:    How to get the Sublime Text license with only Notepad plus plus and its plugin.
 permalink:	hack-sublime-text
-tags: index
+tags: _
 ---
+
+**As being developed throughout the days, I'm no longer support the idea of using crack software. If you are reading this page, definitely that this post is a junk, just ignore it! **
+
+
 
 In previous article, I had introduced about some advantages of Sublime Text. In this blog, I happily bring you Sublime 3. In addition, I will show you how to get the correct license with only Notepad++ and its plugin.
 

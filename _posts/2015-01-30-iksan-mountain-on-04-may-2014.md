@@ -4,7 +4,7 @@ title:      Iksan mountain on 04 May 2014
 date:       2015-01-30 07:11
 summary:    We arrived in the morning, colorful spring flowers are everywhere, predict a beautiful day, lets rock!
 permalink:	iksan-mountain-on-04-may-2014
-tags: index
+tags: _
 ---
 
 We arrived in the morning, colorful spring flowers are everywhere, predict a beautiful day, lets rock!
@@ -27,3 +27,11 @@ Or even royal's dress
 ![Pics 5](https://farm6.staticflickr.com/5312/14131644243_9ee4e86a5b_c.jpg)
 
 Interesting?
+
+
+
+
+
+
+
+Well, that was old day and I don't really want to show my personal moment anymore! But if anyone is reading this, Good luck to you.
