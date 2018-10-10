@@ -83,8 +83,42 @@ print('Time taken in seconds -', end - start)
 
 Đoạn code trên là một trong những ví dụ liên quan đến CPU-bound, tức là khi khởi chạy chương trình sẽ sử dụng toàn bộ công suất của CPU.
 
-```sh
+```powershell
 $ python single_threaded.py
 Time taken in seconds - 1.7025535106658936
+```
+
+Khi sử dụng thư viện multithread:
+
+```python
+# multi_threaded.py
+import time
+from threading import Thread
+
+COUNT = 50000000
+
+def countdown(n):
+    while n>0:
+        n -= 1
+
+t1 = Thread(target=countdown, args=(COUNT//2,))
+t2 = Thread(target=countdown, args=(COUNT//2,))
+
+start = time.time()
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+end = time.time()
+
+print('Time taken in seconds -', end - start)
+
+```
+
+và kết quả:
+
+```bash
+$ python multi_threaded.py
+Time taken in seconds - 1.6745080947875977
 ```
 
