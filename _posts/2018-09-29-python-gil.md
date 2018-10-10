@@ -61,14 +61,14 @@ Chớ trêu thay, việc chọn GIL có lẽ lại là một trong những quy�
 
 ## Liệu có thể lập trình Multithread trên Python hay không?
 
-Hoàn toàn có thể, thậm chí Python còn có 1 thư viện chuẩn dành cho multithreading. Hãy xem ví dụ sau đây:
+Hoàn toàn có thể, thậm chí Python còn có 1 thư viện chuẩn dành cho multithreading. Hãy xem ví dụ về chương trình đếm ngược sau đây:
 
 ```python
 # single_threaded.py
 import time
 from threading import Thread
 
-COUNT = 50000000
+COUNT = 50000000  # 50.000.000
 
 def countdown(n):
     while n>0:
@@ -79,5 +79,12 @@ countdown(COUNT)
 end = time.time()
 
 print('Time taken in seconds -', end - start)
+```
+
+Đoạn code trên là một trong những ví dụ liên quan đến CPU-bound, tức là khi khởi chạy chương trình sẽ sử dụng toàn bộ công suất của CPU.
+
+```sh
+$ python single_threaded.py
+Time taken in seconds - 1.7025535106658936
 ```
 

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Tìm hiểu cặn kẽ về Âm lịch Việt Nam
+title:      Tìm hiểu về Âm lịch Việt Nam
 date:       2018-10-06 00:00
 summary:    Tìm hiểu cặn kẽ về Âm lịch Việt Nam
 permalink:	am-lich-viet-nam
