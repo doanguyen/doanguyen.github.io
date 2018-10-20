@@ -43,6 +43,13 @@ h2:after {
 
 code {
     font-size: 0.8rem;
-    line-height: 1rem;
+    line-height: 0.7rem;
     font-family: "Source Code Pro", Consolas, monospace;
+}
+pre {
+    padding: 1.125em;
+    line-height: 1;
+    overflow-x: scroll;
+    margin-bottom: 0.88em;
+    background-color: #fafafa;
 }

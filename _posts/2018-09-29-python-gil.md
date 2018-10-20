@@ -81,14 +81,14 @@ end = time.time()
 print('Time taken in seconds -', end - start)
 ```
 
-Đoạn code trên là một trong những ví dụ liên quan đến CPU-bound, tức là khi khởi chạy chương trình sẽ sử dụng toàn bộ công suất của CPU.
+Đoạn code trên là một trong những ví dụ liên quan đến CPU-bound, tức là khi chương trình khởi chạy nó sẽ đẩy CPU tới giới hạn làm việc của CPU.
 
 ```powershell
 $ python single_threaded.py
 Time taken in seconds - 1.7025535106658936
 ```
 
-Khi sử dụng thư viện multithread:
+Khi sử dụng thư viện multithread, đoạn code được thiết kế lại để chia việc `countdown` ra làm 2 task thực hiện việc đếm ngược:
 
 ```python
 # multi_threaded.py
@@ -122,3 +122,47 @@ $ python multi_threaded.py
 Time taken in seconds - 1.6745080947875977
 ```
 
+như bạn có thể thấy, ở cả single thread và multi thread, thời gian thực hiện gần như tương đồng. Điều đó có được là do multi-threaded đã bị GIL hạn chế và bạn không thể thực hiện 2 tác vụ cùng 1 thời điểm được.
+
+GIL **không** có nhiều ảnh hưởng đến hiệu suất chương trình có I/O-bound, đơn giản là *thời gian* đợi I/O thông thường lớn hơn so với nhận lại khóa từ GIL. (Nhận định này rất dễ gây nhầm lẫn với sync/async operation).
+
+Tuy nhiên chương trình có thread chạy CPU-bound, ví dụ 1 process trong đó có 1 thread xử lý hình ảnh sẽ ngay lập tức trở thành single thread, các thread trong process đó sẽ phải đợi khi thread xử lý hình ảnh hoàn thành mới nhận được lock từ GIL dẫn tới việc thời gian xử lý tăng lên.
+
+Do đó có rất rất nhiều thảo luận được đưa ra nhằm dỡ bỏ GIL từ Python core.
+
+## Vậy tại sao CPython chưa loại bỏ GIL?
+
+Có rất nhiều lập trình viên phàn nàn về GIL tồn tại trong một thời gian lâu như vậy ở một ngôn ngữ lập trình phổ biến nhất trên thế giới?
+
+Câu trả lời là: Loại bỏ GIL không hề đơn giản, nhóm Python Core đã tìm rất nhiều cách để loại bỏ GIL mà không gây "backward incompatibility", từ những năm 2007 Guido van Rossum đã có [cuộc trao đổi](https://www.artima.com/weblogs/viewpost.jsp?thread=214235) về vấn đề này, nhiều phương án đã được đưa ra những chưa có giải pháp thực sự để loại bỏ.
+
+Tuy nhiên Python 3 đã có một số cải tiến đáng kể để thay đổi nguyên tắc hoạt động của global lock. Từ Python 3, Python **buộc** các thread phải "nhả" khóa trong số thời gian nhất định:
+
+```python
+import sys
+print(sys.getcheckinterval()) # 100
+```
+
+Vậy là sau `100` [instructions](https://en.wikipedia.org/wiki/Instruction_set_architecture) thread nào đang giữ khóa thì sẽ bắt buộc phải "nhả" và nếu không có thread nào đang xếp hàng đợi thì thread đó sẽ được giữ khóa trong 100 instructions tiếp theo. Một số cải tiến nữa được thực hiện từ Python 3 trở đi, ví dụ ở [đây](http://www.dabeaz.com/blog/2010/01/python-gil-visualized.html) và [đây](https://mail.python.org/pipermail/python-dev/2009-October/093321.html).
+
+## Vậy giải pháp là gì
+
+Một số giải pháp có thể sử dụng như sau:
+
+**Muti-processing:** Python GIL chỉ giới hạn trong process mà nó thực thi, với các process khác nhau, vị trí bộ nhớ hoạt động cũng khác nhau nên Python không còn phải lo lắng về reference counting nữa. 
+
+Ví dụ về [multiprocessing](https://docs.python.org/3.4/library/multiprocessing.html?highlight=process).
+
+**Sử dụng các Python Interpreter thay thế:** Như Pypy, IronPython, Jython.
+
+Sử dụng Cython: Rất nhiều người đang rất để tâm tới Cython vì tính tiện lợi và việc di chuyển giữa C/C++, Python API dễ dàng hơn nhiều, việc gỡ bỏ GIL có thể thực hiện trực tiếp bởi [with](https://cython.readthedocs.io/en/latest/src/userguide/external_C_code.html#nogil) statement.
+
+Tham khảo:
+
+[0] Google/Wikipedia/Youtube.
+
+[1][https://mail.python.org/pipermail/python-dev/2009-October/093321.html](https://mail.python.org/pipermail/python-dev/2009-October/093321.html)
+
+[2][https://youtu.be/Obt-vMVdM8s](https://youtu.be/Obt-vMVdM8s)
+
+[3][https://realpython.com/python-gil/](https://realpython.com/python-gil/)
