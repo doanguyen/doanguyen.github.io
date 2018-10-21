@@ -7,11 +7,11 @@ permalink:	python-gil
 tags: python, index
 image: images/gil.jpg
 ---
-Python Global Interpreter Lock (hay GIL) là một thuật ngữ trong lập trình có liên quan đến xử lý Luồng (Thread), là một Khóa (Lock) Tổng (Global) quản lý Thread sao cho tại một thời điểm nhất định, chỉ có 1 Luồng giữ Khóa đóng vai trò truy xuất, chỉnh sửa bộ nhớ. Thử tưởng tượng hình bên dưới mô tả quá trình phân phối tài nguyên CPU trong Python, trong đó mỗi cá nhân xếp hàng là 1 Thread, người thu ngân đóng vai trò là Lock (và rõ ràng, chúng ta có 2 Process chạy song song :D). Tại mỗi thời điểm mỗi Lock chỉ làm việc với 1 Thread, khi đó chúng ta coi Thread đó đang giữ Khóa, các Thread còn lại phải ở trong trạng thái chờ Queue.
+Python Global Interpreter Lock (hay GIL) là một thuật ngữ trong lập trình có liên quan đến xử lý Luồng (Thread), GIL là một Khóa (Lock) Tổng (Global) quản lý Luồng sao cho tại một thời điểm nhất định, chỉ có 1 Luồng giữ Khóa đóng vai trò truy xuất, chỉnh sửa bộ nhớ. Thử tưởng tượng hình bên dưới mô tả quá trình phân phối tài nguyên CPU trong Python, trong đó mỗi cá nhân xếp hàng là 1 Luồng, người thu ngân đóng vai trò là Khóa (và rõ ràng, chúng ta đang có 2 Process chạy song song). Tại mỗi thời điểm mỗi Khóa chỉ làm việc với 1 Luồng, khi đó chúng ta coi Luồng đó đang giữ Khóa, các Luồng còn lại phải ở trong trạng thái Chờ-Queue.
 
 ![](images/queue.png)
 
-Điều đó có nghĩa là, các lập trình viên làm việc trên 1 Thread duy nhất sẽ không cảm nhận được sự ảnh hưởng của Khóa Tổng này, tuy nhiên trong lập trình viên có sử dụng các Luồng song song (multi-thread) hay những tác vụ CPU-bound (các công việc nặng như xử lý Video, ảnh, ...) hoặc IO-bound (các công việc liên quan đến IO: ghi dữ liệu ra file, xử lý 1 socket,...) thì GIL **có thể** là nút thắt cổ chai dẫn đến chương trình chạy chậm. 
+Điều đó có nghĩa là, các lập trình viên lập trình đơn Luồng sẽ không cảm nhận được sự ảnh hưởng của Khóa Tổng (từ bây giờ Khóa Tổng sẽ được nói gọn là Khóa) này, tuy nhiên trong lập trình viên có sử dụng các đa Luồng (multi-thread) hay những tác vụ CPU-bound (các công việc nặng như xử lý Video, ảnh, ...) hoặc IO-bound (các công việc liên quan đến IO: ghi dữ liệu ra file, xử lý 1 socket,...) thì GIL **có thể** là nút thắt cổ chai dẫn đến chương trình chạy chậm hơn. 
 
 ## Tại sao Python lại tồn tại GIL?
 
@@ -41,7 +41,7 @@ list trống [] được reference 3 lần (cho biến a, b và khi truy xuất 
 
 Quay lại với GIL:
 
-Có thể nói việc GIL là thiết yếu trong Python (hay cả Ruby) xuất phát từ việc sử dụng reference counting.  Tại sao vậy? Thử tưởng tượng trong trường hợp 2 Thread cùng tham chiếu tới 1 *variable counting* và cùng tăng hoặc giảm đồng thời giá trị đó, nếu may mắn thì chúng ta sẽ xuất hiện memory leak, tồi tệ hơn khi 1 Thread đã xóa biến `a` khỏi bộ nhớ nhưng vẫn còn 1 Thread khác vẫn sử dụng biến `a`, điều đó sẽ dẫn tới chương trình crash mà lúc đó sẽ rất khó để tìm ra lỗi. Do đó để giải quyết vấn đề trên, 1 Global Lock được tạo ra cho tất cả các Thread.
+Có thể nói việc GIL là thiết yếu trong Python (hay cả Ruby, PHP) xuất phát từ việc sử dụng reference counting.  Tại sao vậy? Thử tưởng tượng trong trường hợp 2 Luồng cùng tham chiếu tới 1 *variable counting* và cùng tăng hoặc giảm đồng thời giá trị đó, nếu may mắn thì chúng ta sẽ xuất hiện memory leak, tồi tệ hơn khi 1 Luồng đã xóa biến `a` khỏi bộ nhớ nhưng vẫn còn 1 Luồng khác vẫn tham chiếu tới biến `a`, điều đó sẽ dẫn tới chương trình crash mà lúc đó sẽ rất khó để tìm ra lỗi. Do đó để giải quyết vấn đề trên, 1 Khóa được tạo ra cho tất cả các Luồng trong 1 Process.
 
 Ngoài cách sử dụng GIL, các lập trình viên còn có thể tạo ra 1 layer trong quá trình compiler - JIT (Just in time compiler) để giải quyết vấn đề trên. Jpython, IronPython là 2 ví dụ điển hình của interpreter Python mà không sử dụng GIL. Tuy nhiên nhược điểm của JIT là thời gian khởi động lại siêu chậm nên không được nhiều lập trình viên Python  sử dụng.
 
@@ -55,7 +55,7 @@ Tụm chung lại:
 
 Vậy tại sao Guido lại chọn GIL từ những ngày đầu viết CPython? Liệu đó có phải là lựa chọn tồi ngay từ khi Python được hình thành?
 
-Chớ trêu thay, việc chọn GIL có lẽ lại là một trong những quyết định khiến Python trở nên phổ biến như hiện nay. Những ngày đầu Python hình thành, khái niệm về Thread/Multithread trong các hệ điều hành còn chưa được phổ biến [need source?], và Python được thiết kế với mục đích dễ đọc, dễ viết cho người mới làm quen nên tốc độ xử lý không phải là ưu tiên hàng đầu. Và khi Python càng được mở rộng, vô số những thư viện khác nhau được hình thành tư rất nhiều nguồn lập trình viên, vì thế thread-safe memory là điều kiện tiên quyết để có cộng đồng lập trình viên lành mạnh, cho ra những phần mềm an toàn và hạn chế tối thiểu lỗi trong quá trình thực thi. Và cũng từ GIL, tốc độ thực thi của phần mềm single-threaded được tăng cường tốc độ đáng kể, những thư viện C với non thread-safe có thể dễ dàng `port` qua thư viện Python sử dụng Python extension, điều đó càng làm cho cộng đồng Python trở nên phát triển như hiện nay. Do đó, có thể nói rằng GIL là giải pháp an toàn để giải quyết các vấn đề phức tạp mà cộng đồng lập trình viên Python gặp phải hàng ngày.
+Không thể phủ nhận rằng việc chọn GIL có lẽ lại là một trong những quyết định khiến Python trở nên phổ biến như hiện nay. Những ngày đầu Python hình thành, khái niệm về Thread/Multithread trong các hệ điều hành còn chưa được phổ biến [need source?], và Python được thiết kế với mục đích dễ đọc, dễ viết cho người mới làm quen nên tốc độ xử lý không phải là ưu tiên hàng đầu. Và khi Python càng được mở rộng, vô số những thư viện khác nhau được hình thành tư rất nhiều nguồn lập trình viên, vì thế thread-safe memory là điều kiện tiên quyết để có cộng đồng lập trình viên lành mạnh, cho ra những phần mềm an toàn và hạn chế tối thiểu lỗi trong quá trình thực thi. Và cũng từ GIL, tốc độ thực thi của phần mềm single-threaded được tăng cường tốc độ đáng kể, những thư viện C với non thread-safe có thể dễ dàng `port` qua thư viện Python sử dụng Python extension, điều đó càng làm cho cộng đồng Python trở nên phát triển như hiện nay. Do đó, có thể nói rằng GIL là giải pháp an toàn để giải quyết các vấn đề phức tạp mà cộng đồng lập trình viên Python gặp phải hàng ngày.
 
 Điều đó đi cùng với 1 hạn chế: lập trình multithread sẽ ít nhận được lợi ích từ CPython!
 
@@ -126,7 +126,7 @@ như bạn có thể thấy, ở cả single thread và multi thread, thời gia
 
 GIL **không** có nhiều ảnh hưởng đến hiệu suất chương trình có I/O-bound, đơn giản là *thời gian* đợi I/O thông thường lớn hơn so với nhận lại khóa từ GIL. (Nhận định này rất dễ gây nhầm lẫn với sync/async operation).
 
-Tuy nhiên chương trình có thread chạy CPU-bound, ví dụ 1 process trong đó có 1 thread xử lý hình ảnh sẽ ngay lập tức trở thành single thread, các thread trong process đó sẽ phải đợi khi thread xử lý hình ảnh hoàn thành mới nhận được lock từ GIL dẫn tới việc thời gian xử lý tăng lên.
+Tuy nhiên chương trình có thread chạy CPU-bound, ví dụ 1 process trong đó có 1 Luồng xử lý hình ảnh, chương trình sẽ ngay lập tức trở thành đơn luồng, các Luồng còn lại trong process đó sẽ phải đợi khi Luồng xử lý hình ảnh hoàn thành mới nhận được lock từ GIL dẫn tới việc thời gian xử lý tăng lên.
 
 Do đó có rất rất nhiều thảo luận được đưa ra nhằm dỡ bỏ GIL từ Python core.
 
