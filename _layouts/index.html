@@ -2,17 +2,9 @@
 <html>
 {% include head.html %}
 <body class="site{% if site.animated %} animated fade-in-down{% endif %}">
-  <div class="site-wrap">
-
-    <div class="post p2 p-responsive wrap" role="main">
-      <div class="measure">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-      <div class="clearfix"></div>
-        {% include social_links.html %}
-    </div>
-  {% include footer.html %}
+{{ content }}
+<div class="clearfix"></div>
+{% include social_links.html %}
+{% include footer.html %}
 </body>
 </html>

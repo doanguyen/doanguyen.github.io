@@ -5,13 +5,21 @@ date:       2018-09-29 00:00
 summary:    Python Global Interpreter Lock là gì?
 permalink:	python-gil
 tags: python, index
-image: images/gil.jpg
 ---
+
 Python Global Interpreter Lock (hay GIL) là một thuật ngữ trong lập trình có liên quan đến xử lý Luồng (Thread), GIL là một Khóa (Lock) Tổng (Global) quản lý Luồng sao cho tại một thời điểm nhất định, chỉ có 1 Luồng giữ Khóa đóng vai trò truy xuất, chỉnh sửa bộ nhớ. Thử tưởng tượng hình bên dưới mô tả quá trình phân phối tài nguyên CPU trong Python, trong đó mỗi cá nhân xếp hàng là 1 Luồng, người thu ngân đóng vai trò là Khóa (và rõ ràng, chúng ta đang có 2 Process chạy song song). Tại mỗi thời điểm mỗi Khóa chỉ làm việc với 1 Luồng, khi đó chúng ta coi Luồng đó đang giữ Khóa, các Luồng còn lại phải ở trong trạng thái Chờ-Queue.
 
 ![](images/queue.png)
 
-Điều đó có nghĩa là, các lập trình viên lập trình đơn Luồng sẽ không cảm nhận được sự ảnh hưởng của Khóa Tổng (từ bây giờ Khóa Tổng sẽ được nói gọn là Khóa) này, tuy nhiên trong lập trình viên có sử dụng các đa Luồng (multi-thread) hay những tác vụ CPU-bound (các công việc nặng như xử lý Video, ảnh, ...) hoặc IO-bound (các công việc liên quan đến IO: ghi dữ liệu ra file, xử lý 1 socket,...) thì GIL **có thể** là nút thắt cổ chai dẫn đến chương trình chạy chậm hơn. 
+Điều đó có nghĩa là, các lập trình viên lập trình đơn Luồng sẽ không cảm nhận được sự ảnh hưởng của Khóa Tổng (từ bây giờ Khóa Tổng sẽ được nói gọn là Khóa) này,
+tuy nhiên trong lập trình viên có sử dụng các đa Luồng (multi-thread) hay những tác vụ
+CPU-bound  hoặc IO-bound
+<label for="sn-extensive-use-of-sidenotes" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-extensive-use-of-sidenotes" class="margin-toggle"/>
+<span class="sidenote"><b>CPU bound</b>: các công việc nặng như xử lý Video, ảnh,.. <br />
+<b>IO-bound</b>: các công việc liên quan đến IO: ghi dữ liệu ra file, xử lý 1 socket,...
+</span>
+thì GIL **có thể** là nút thắt cổ chai dẫn đến chương trình chạy chậm hơn. 
+
 
 ## Tại sao Python lại tồn tại GIL?
 

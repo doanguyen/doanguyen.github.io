@@ -1,0 +1,19 @@
+@charset "utf-8";
+* { margin:0; padding:0; font-synthesis: none; }
+@import 'include/varialbes';
+
+@import 'include/normalize';
+@import 'include/clearfix';
+
+@import 'include/font-face';
+@import 'include/tufte';
+
+@import 'include/code';
+@import 'include/blockquotes';
+@import 'include/media-queries';
+@import 'include/pagination';
+@import "include/latex";
+@import 'include/highlight';
+@import 'include/archive';
+@import "include/homepage";
+@import "include/footer";

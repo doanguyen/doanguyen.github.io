@@ -1,0 +1,31 @@
+.entry-wrapper {
+  margin-bottom: 25px;
+  @media(min-width: $viewport-large) {
+    width: 60%;
+  }
+}
+
+.entry-overview {
+  margin-top: 1.5rem;
+  .excerpt {
+    display: block;
+    width: 80%;
+    float: none;
+    font-size: 0.9rem;
+    line-height: 1.14286;
+    margin-bottom: 0;
+  }
+  a {
+    background: none !important;
+    color: $blue;
+  }
+  .entry-date{
+    display: inline;
+    line-height: 1.71429;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    float: right;
+    color: $dark-gray;
+  }
+}

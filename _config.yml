@@ -1,22 +1,16 @@
 # Site settings
 title:       Nguyen Van Dung, from Science with Love
 email:       dungnv2410@gmail.com
-author:      Nguyen Van Dung
-description: "Nguyen Van Dung homepage"
+author:      doanguyen
+description: "DoaNguyen Homepage"
 baseurl:     ""
-url:         "http://doanguyen.github.io"
+url:         "http://doanguyen.com"
 
 # Google analytics
 google_analytics:	UA-37376311-2
 
-# Mathjax
-mathjax: true
-
 # Optional features
-animated:           false
-show_related_posts: false
 show_post_footers:  false
-show_social_icons:  false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
@@ -56,6 +50,7 @@ permalink:    pretty
 paginate:     20
 paginate_path:	archives/page-:num
 sass:
+  sass_dir: _sass
   compressed: true
 gems:
   - jekyll-sitemap
