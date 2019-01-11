@@ -62,8 +62,7 @@ Tụm chung lại:
 ## Tại sao Python chọn GIL làm giải pháp?
 
 Vậy tại sao Guido
-<label for="sn-guido-van-rossum" class="margin-toggle sidenote-number"></label>
-<input type="checkbox" id="sn-guido-van-rossum" class="margin-toggle"/>
+<label for="sn-guido-van-rossum" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-guido-van-rossum" class="margin-toggle"/>
 <span class="sidenote"><b>Guido van Rossum</b>, người sáng lập ra ngôn ngữ lập trình Python.
 </span>
 lại chọn GIL từ những ngày đầu viết CPython? Liệu đó có phải là lựa chọn tồi ngay từ khi Python được hình thành?

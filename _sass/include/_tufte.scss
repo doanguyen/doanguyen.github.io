@@ -245,16 +245,18 @@ img {
 }
 
 .sidenote-number:after {
-  content: counter(sidenote-counter);
-  font-size: 0.8rem;
+  content: "★";
+  font-size: 0.7rem;
   top: -0.5rem;
-  left: 0.1rem;
+  left: -0.1rem;
+  color: $mid-gray;
 }
 
 .sidenote:before {
-  content: counter(sidenote-counter) " ";
-  font-size: 0.8rem;
+  content: "★";
+  font-size: 0.7rem;
   top: -0.5rem;
+  color: $mid-gray;
 }
 
 blockquote .sidenote, blockquote .marginnote {
