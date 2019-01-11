@@ -18,6 +18,9 @@ blockquote{
   -moz-box-shadow: 2px 2px 15px #ccc;
   -webkit-box-shadow: 2px 2px 15px #ccc;
   box-shadow: 2px 2px 15px #ccc;
+  @media(min-width: $viewport-large) {
+    width: 60%;
+  }
 }
 
 blockquote::before{
