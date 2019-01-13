@@ -13,7 +13,7 @@ Python Global Interpreter Lock (hay GIL) là một thuật ngữ trong lập tr�
 
 Điều đó có nghĩa là, các lập trình viên lập trình đơn Luồng sẽ không cảm nhận được sự ảnh hưởng của Khóa Tổng (từ bây giờ Khóa Tổng sẽ được nói gọn là Khóa) này,
 tuy nhiên trong lập trình viên có sử dụng các đa Luồng (multi-thread) hay những tác vụ
-CPU-bound  hoặc IO-bound
+CPU-bound
 <label for="sn-extensive-use-of-sidenotes" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-extensive-use-of-sidenotes" class="margin-toggle"/>
 <span class="sidenote"><b>CPU bound</b>: các công việc nặng như xử lý Video, ảnh,.. <br />
 <b>IO-bound</b>: các công việc liên quan đến IO: ghi dữ liệu ra file, xử lý 1 socket,...
