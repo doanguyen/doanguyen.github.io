@@ -35,7 +35,8 @@ summary:   {summary}
 permalink:	{permalink}
 tags: {tags}
 ---"""
-    print(filename, header_template)
+    if os.path.isfile(filename):
+        raise Exception("ERROR, file exist")
     with codecs.open(filename, 'w+', 'utf-8') as f:
         f.write(header_template)
 
